@@ -93,4 +93,15 @@ public class PostController {
         return "redirect:/items/posts/" + id; //상세 페이지로 페이지 이동
     }
 
+    //게시글 검색
+    @GetMapping("/items/posts/search")
+    public String search(@RequestParam String keyword, Model model) {
+        List<Post> posts = postRepository.findByTitleContaining(keyword);
+        List<PostResponseDto> postList = posts.stream()
+                .map(PostResponseDto::new)
+                .toList();
+        model.addAttribute("postList", postList);
+        return "items/list"; //list.mustache
+    }
+
 }
