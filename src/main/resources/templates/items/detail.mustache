@@ -10,14 +10,18 @@
     </div>
 
     <div class="detail-actions">
-        <!-- 삭제 링크 -->
-        <a href="/items/posts/{{id}}/delete" class="btn-delete">삭제</a>
+        <!-- 삭제 버튼 (POST 방식) -->
+        <form action="/items/posts/{{id}}/delete" method="POST" style="display:inline;">
+            <button type="submit" class="btn-delete">삭제</button>
+        </form>
 
-        <!-- 수정 링크 -->
+        <!-- 수정은 페이지 이동이므로 그대로 <a> 사용 -->
         <a href="/items/posts/{{id}}/edit" class="btn-edit">수정</a>
 
-        <!-- 거래 완료 링크 -->
-        <a href="/items/posts/{{id}}/complete" class="btn-complete">거래 완료</a>
+        <!-- 거래 완료 버튼 (POST 방식) -->
+        <form action="/items/posts/{{id}}/complete" method="POST" style="display:inline;">
+            <button type="submit" class="btn-complete">거래 완료</button>
+        </form>
     </div>
 </main>
 
