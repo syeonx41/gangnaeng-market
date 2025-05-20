@@ -1,0 +1,33 @@
+.btn-create {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    background-color: #7EA65F;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-submit {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    background-color: #7EA65F;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-delete {
+    color: red;
+    margin-right: 10px;
+}
+
+.btn-edit {
+    color: blue;
+    margin-right: 10px;
+}
+
+.btn-complete {
+    color: green;
+}
