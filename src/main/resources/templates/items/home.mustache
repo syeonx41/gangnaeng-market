@@ -1,0 +1,22 @@
+{{>layout/header}}
+
+<main>
+    <section class="intro">
+        <h2>강냉마켓에 오신 것을 환영합니다!</h2>
+        <p>강남대 학생들의 다양한 중고 물품을 거래할 수 있는 커뮤니티 마켓입니다.</p>
+        <a href="/items/create" class="btn-create">게시글 등록</a>
+    </section>
+
+    <section class="latest-posts">
+        <h3>최근 게시글</h3>
+        <ul class="post-preview-list">
+            {{#posts}}
+                <li>{{title}} - {{price}}원</li>
+            {{/posts}}
+        </ul>
+
+        <a href="/items/posts" class="btn-view-all">전체 게시글 보기</a>
+    </section>
+</main>
+
+{{>layout/footer}}

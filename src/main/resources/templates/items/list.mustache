@@ -1,0 +1,19 @@
+{{> simple-header}}
+
+<main class="container">
+    <h2>전체 게시글 목록</h2>
+
+    <ul class="post-list">
+        {{#posts}}
+            <li class="post-item">
+                <a href="/items/posts/{{id}}" class="post-link">
+                    <h3>{{title}}</h3>
+                    <p>{{price}}원</p>
+                </a>
+                <p class="post-desc">{{description}}</p>
+            </li>
+        {{/posts}}
+    </ul>
+</main>
+
+{{> footer}}

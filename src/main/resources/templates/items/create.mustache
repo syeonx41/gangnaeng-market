@@ -1,0 +1,27 @@
+{{> simple-header}}
+
+<main class="container">
+    <h2>게시글 등록</h2>
+
+    <form action="/items/posts" method="POST">
+        <div class="form-group">
+            <label for="title">제목</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">설명</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="price">가격 (원)</label>
+            <input type="number" id="price" name="price" required>
+        </div>
+
+        <button type="submit" class="btn-submit">등록하기</button>
+        <a href = "/items/home">홈으로</a>
+    </form>
+</main>
+
+{{> footer}}

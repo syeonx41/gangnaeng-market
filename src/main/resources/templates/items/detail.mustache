@@ -1,0 +1,24 @@
+{{> simple-header}}
+
+<main class="container">
+    <h2>{{title}}</h2>
+
+    <div class="detail-info">
+        <p><strong>가격:</strong> {{price}}원</p>
+        <p><strong>설명:</strong></p>
+        <p>{{description}}</p>
+    </div>
+
+    <div class="detail-actions">
+        <!-- 삭제 링크 -->
+        <a href="/items/posts/{{id}}/delete" class="btn-delete">삭제</a>
+
+        <!-- 수정 링크 -->
+        <a href="/items/posts/{{id}}/edit" class="btn-edit">수정</a>
+
+        <!-- 거래 완료 링크 -->
+        <a href="/items/posts/{{id}}/complete" class="btn-complete">거래 완료</a>
+    </div>
+</main>
+
+{{> footer}}
