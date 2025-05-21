@@ -88,7 +88,7 @@ public class PostController {
     public String completePost(@PathVariable Long id) {
         Post post = postRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
-        post.setStatus(PostStatus.COMPLETE);
+        post.setStatus(PostStatus.SOLDOUT);
         postRepository.save(post);
         return "redirect:/items/posts/" + id; //상세 페이지로 페이지 이동
     }

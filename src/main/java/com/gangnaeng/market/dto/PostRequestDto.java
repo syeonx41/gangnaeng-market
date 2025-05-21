@@ -19,7 +19,7 @@ public class PostRequestDto {
                 .title(title)
                 .content(content)
                 .price(price)
-                .status(PostStatus.ONGOING)
+                .status(PostStatus.ONSALE)
                 .build();
     }
 }

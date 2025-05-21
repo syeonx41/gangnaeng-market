@@ -1,6 +1,7 @@
 package com.gangnaeng.market.dto;
 
 import com.gangnaeng.market.entity.Post;
+import com.gangnaeng.market.entity.PostStatus;
 import lombok.Getter;
 
 @Getter
@@ -17,7 +18,7 @@ public class PostResponseDto {
         this.content = post.getContent();
         this.price = post.getPrice();
         this.statusText = post.getStatus() == null ? "알 수 없음"
-                : post.getStatus() == com.gangnaeng.market.entity.PostStatus.ONGOING ? "판매 중"
+                : post.getStatus() == PostStatus.ONSALE ? "판매 중"
                 : "거래 완료";
     }
 }
