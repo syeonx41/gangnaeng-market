@@ -18,6 +18,11 @@
     border-radius: 5px;
 }
 
+.btn-submit:hover {
+    background-color: #6a944f;
+}
+
+
 .btn-delete {
     color: red;
     margin-right: 10px;

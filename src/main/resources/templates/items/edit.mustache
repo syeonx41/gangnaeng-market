@@ -3,20 +3,20 @@
 <main>
     <h2>게시글 수정</h2>
 
-    <form action="/items/posts/{{id}}/edit" method="POST">
-        <div class="form-group">
+    <form action="/items/posts/{{post.id}}" method="POST">
+    <div class="form-group">
             <label for="title">제목</label>
-            <input type="text" id="title" name="title" value="{{title}}" required>
+            <input type="text" id="title" name="title" value="{{post.title}}" required>
         </div>
 
         <div class="form-group">
-            <label for="description">설명</label>
-            <textarea id="description" name="description" rows="4" required>{{description}}</textarea>
+            <label for="content">설명</label>
+            <textarea id="content" name="content" rows="4" required>{{post.content}}</textarea>
         </div>
 
         <div class="form-group">
             <label for="price">가격 (원)</label>
-            <input type="number" id="price" name="price" value="{{price}}" required>
+            <input type="number" id="price" name="price" value="{{post.price}}" required>
         </div>
 
         <button type="submit" class="btn-submit">수정 완료</button>

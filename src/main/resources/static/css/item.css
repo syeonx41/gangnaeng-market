@@ -18,3 +18,115 @@
     font-size: 18px;
     margin-bottom: 8px;
 }
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #7ea65f;
+    outline: none;
+}
+
+/* 링크 버튼 */
+main a {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    color: #7ea65f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+/* 게시글 목록 */
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1024px;
+    list-style: none;
+}
+
+.post-item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.15s ease-in-out;
+}
+
+.post-item:hover {
+    transform: translateY(-4px);
+}
+
+.post-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.post-link h3 {
+    font-size: 18px;
+    margin: 0 0 8px 0;
+    color: #222;
+    font-weight: bold;
+}
+
+.post-price {
+    font-weight: bold;
+    color: #7ea65f;
+    margin: 0 0 6px;
+}
+
+.post-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.post-status {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.status-onsale {
+    color: #4caf50;
+}
+
+.status-soldout {
+    color: #e53935;
+}
