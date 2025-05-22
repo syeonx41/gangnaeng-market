@@ -11,14 +11,18 @@ public class PostResponseDto {
     private String content;
     private int price;
     private String statusText;
+    private boolean isSoldOut;
 
     public PostResponseDto(Post post) {
         this.id = post.getId();
         this.title = post.getTitle();
         this.content = post.getContent();
         this.price = post.getPrice();
+        this.isSoldOut = post.getStatus() == PostStatus.SOLDOUT;
         this.statusText = post.getStatus() == null ? "알 수 없음"
                 : post.getStatus() == PostStatus.ONSALE ? "판매 중"
                 : "거래 완료";
     }
+
+
 }

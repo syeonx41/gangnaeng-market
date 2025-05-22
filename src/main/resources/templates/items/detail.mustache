@@ -1,28 +1,36 @@
 {{> layout/simple-header}}
 
 <main>
-    <h2>{{post.title}}</h2>
+    <div class="post-detail-box">
+        <h2 class="post-title">{{post.title}}</h2>
 
-    <div class="detail-info">
-        <p><strong>가격:</strong> {{post.price}}원</p>
-        <p><strong>설명:</strong></p>
-        <p>{{post.content}}</p>
-    </div>
+        <div class="post-meta">
+            <p class="post-price">{{post.price}}원</p>
+            <p class="post-content">{{post.content}}</p>
 
-    <div class="detail-actions">
-        <!-- 삭제 버튼 (POST 방식) -->
-        <form action="/items/posts/{{id}}/delete" method="POST" style="display:inline;">
-            <button type="submit" class="btn-delete">삭제</button>
-        </form>
+            <!-- 상태 표시 -->
+            <p class="post-status-badge {{#post.isSoldOut}}soldout{{/post.isSoldOut}}{{^post.isSoldOut}}onsale{{/post.isSoldOut}}">
+                {{post.statusText}}
+            </p>
+        </div>
 
-        <!-- 수정은 페이지 이동이므로 그대로 <a> 사용 -->
-        <a href="/items/posts/{{id}}/edit" class="btn-edit">수정</a>
+        <div class="detail-actions">
+            <!-- 삭제 버튼 -->
+            <form action="/items/posts/{{post.id}}/delete" method="POST" style="display:inline;">
+                <button type="submit" class="btn-delete">삭제</button>
+            </form>
 
-        <!-- 거래 완료 버튼 (POST 방식) -->
-        <form action="/items/posts/{{id}}/complete" method="POST" style="display:inline;">
-            <button type="submit" class="btn-complete">거래 완료</button>
-        </form>
+            <!-- 수정 버튼 -->
+            <a href="/items/posts/{{post.id}}/edit" class="btn-edit">수정</a>
+
+            <!-- 거래 완료 버튼: 판매 중일 때만 -->
+            {{^post.isSoldOut}}
+                <form action="/items/posts/{{post.id}}/complete" method="POST" style="display:inline;">
+                    <button type="submit" class="btn-complete">거래 완료</button>
+                </form>
+            {{/post.isSoldOut}}
+        </div>
     </div>
 </main>
 
-{{>layout/footer}}
+{{> layout/footer}}

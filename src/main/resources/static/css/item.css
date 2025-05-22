@@ -123,10 +123,23 @@ main a:hover {
     font-weight: bold;
 }
 
-.status-onsale {
-    color: #4caf50;
+.post-status-badge {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
-.status-soldout {
-    color: #e53935;
+.post-status-badge.onsale {
+    background-color: rgba(126, 166, 95, 0.2);
+    color: #7EA65F;
+    border: 1px solid rgba(126, 166, 95, 0.3);
+}
+
+.post-status-badge.soldout {
+    background-color: rgba(162, 128, 100, 0.1);
+    color: #A28064;
+    border: 1px solid rgba(162, 128, 100, 0.2);
 }
