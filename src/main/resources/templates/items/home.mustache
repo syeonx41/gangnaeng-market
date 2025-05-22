@@ -7,18 +7,7 @@
         <a href="/items/posts/create" class="btn-create">게시글 등록</a>
     </section>
 
-    <section class="recent-posts">
-        <h3>📌 최근 게시글</h3>
-        {{#items}}
-            <div class="item-preview">
-                <a href="/items/posts/{{id}}">{{title}}</a>
-            </div>
-        {{/items}}
-        {{^items}}
-            <p>게시글이 아직 없습니다.</p>
-        {{/items}}
         <a href="/items/posts">전체 게시글 보기 →</a>
-    </section>
 </main>
 
 {{>layout/footer}}

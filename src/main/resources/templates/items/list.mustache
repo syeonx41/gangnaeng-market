@@ -1,7 +1,20 @@
 {{> layout/simple-header}}
 
 <main>
-    <h2>전체 게시글 목록</h2>
+    <div class="post-header-row" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+        <h2 style="margin: 0;">전체 게시글 목록</h2>
+
+        <div class="post-controls" style="display: flex; gap: 10px;">
+            <!-- 검색창 -->
+            <form action="/items/posts/search" method="get" class="search-form">
+                <input type="text" name="keyword" placeholder="검색어를 입력하세요" class="search-input">
+                <button type="submit" class="search-btn">검색</button>
+            </form>
+
+            <!-- 글쓰기 버튼 -->
+            <a href="/items/posts/create" class="btn-create">글쓰기</a>
+        </div>
+    </div>
 
     <ul class="post-list">
         {{#postList}}
