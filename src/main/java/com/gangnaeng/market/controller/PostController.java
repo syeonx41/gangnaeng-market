@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,7 @@ public class PostController {
             postList.add(new PostResponseDto(post));
         }
         model.addAttribute("postList", postList);
-        return "items/list"; //list.mustache
+        return "items/list"; // list.mustache
     }
 
     //게시글 상세 보기
@@ -79,8 +80,12 @@ public class PostController {
     }
 
     @PostMapping("/{id}/delete")
-    public String deletePost(@PathVariable Long id) {
-        postRepository.deleteById(id);
+    public String deletePost(@PathVariable Long id, RedirectAttributes rttr) {
+        Post target = postRepository.findById(id).orElse(null);
+        if( target != null){
+            postRepository.deleteById(id);
+            rttr.addFlashAttribute("msg","삭제되었습니다.");
+        }
         return "redirect:/items/posts"; //목록 페이지로 페이지 이동
     }
 
@@ -94,14 +99,15 @@ public class PostController {
     }
 
     //게시글 검색
-    @GetMapping("/items/posts/search")
+    @GetMapping("/search")
     public String search(@RequestParam String keyword, Model model) {
         List<Post> posts = postRepository.findByTitleContaining(keyword);
         List<PostResponseDto> postList = posts.stream()
                 .map(PostResponseDto::new)
                 .toList();
         model.addAttribute("postList", postList);
-        return "items/list"; //list.mustache
+        model.addAttribute("keyword", keyword);
+        return "items/search"; //search.mustache
     }
 
 }

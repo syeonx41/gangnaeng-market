@@ -1,18 +1,23 @@
 {{> layout/simple-header}}
 
 <main>
-    <h2>전체 게시글 목록</h2>
+    <h2>"{{keyword}}"의 검색 결과</h2>
+
+    <div class="back-to-list" style="margin-bottom: 16px;">
+        <a href="/items/posts" class="btn-back">전체 목록 보기</a>
+    </div>
 
     <ul class="post-list">
-        {{#posts}}
+        {{#postList}}
             <li class="post-item">
                 <a href="/items/posts/{{id}}" class="post-link">
                     <h3>{{title}}</h3>
                     <p>{{price}}원</p>
                 </a>
+                <p class="post-desc">{{content}}</p>
             </li>
-        {{/posts}}
+        {{/postList}}
     </ul>
 </main>
 
-{{>layout/footer}}
+{{> layout/footer}}

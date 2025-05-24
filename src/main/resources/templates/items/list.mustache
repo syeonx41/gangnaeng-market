@@ -1,6 +1,12 @@
 {{> layout/simple-header}}
 
 <main>
+    {{#msg}}
+        <div class="alert alert-success alert-dismissible">
+            {{msg}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {{/msg}}
     <div class="post-header-row" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
         <h2 style="margin: 0;">전체 게시글 목록</h2>
 
