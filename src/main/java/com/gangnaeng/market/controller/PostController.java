@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -79,10 +80,15 @@ public class PostController {
     }
 
     @PostMapping("/{id}/delete")
-    public String deletePost(@PathVariable Long id) {
-        postRepository.deleteById(id);
-        return "redirect:/items/posts"; //목록 페이지로 페이지 이동
+    public String deletePost(@PathVariable Long id, RedirectAttributes rttr) {
+        Post target = postRepository.findById(id).orElse(null);
+        if (target != null) {
+            postRepository.deleteById(id);
+            rttr.addFlashAttribute("msg", "게시글이 삭제되었습니다.");
+        }
+        return "redirect:/items/posts";
     }
+
 
     @PostMapping("/{id}/complete")
     public String completePost(@PathVariable Long id) {
