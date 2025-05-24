@@ -93,6 +93,18 @@ public class PostController {
         return "redirect:/items/posts/" + id; //상세 페이지로 페이지 이동
     }
 
+    @PostMapping("/{id}/cancel")
+    public String cancelPost(@PathVariable Long id) {
+        Post post = postRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
+        post.setStatus(PostStatus.ONSALE);
+        postRepository.save(post);
+        return "redirect:/items/posts/" + id; //상세 페이지로 페이지 이동
+    }
+
+
+
+
     //게시글 검색
     @GetMapping("/search")
     public String search(@RequestParam String keyword, Model model) {
@@ -101,7 +113,8 @@ public class PostController {
                 .map(PostResponseDto::new)
                 .toList();
         model.addAttribute("postList", postList);
-        return "items/list"; //list.mustache
+        model.addAttribute("keyword", keyword);
+        return "items/search"; //search.mustache
     }
 
 }

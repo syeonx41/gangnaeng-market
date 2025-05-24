@@ -15,21 +15,31 @@
         </div>
 
         <div class="detail-actions">
-            <!-- 삭제 버튼 -->
             <form action="/items/posts/{{post.id}}/delete" method="POST" style="display:inline;">
-                <button type="submit" class="btn-delete">삭제</button>
+                <button type="submit" class="btn btn-delete">삭제하기</button>
             </form>
 
-            <!-- 수정 버튼 -->
-            <a href="/items/posts/{{post.id}}/edit" class="btn-edit">수정</a>
+            <form action="/items/posts/{{post.id}}/edit" method="GET" style="display:inline;">
+                <button type="submit" class="btn btn-edit">수정하기</button>
+            </form>
 
-            <!-- 거래 완료 버튼: 판매 중일 때만 -->
+            <!-- 판매 상태 변경 -->
+            {{#post.isSoldOut}}
+                <!-- 거래 완료 상태일 때 → 거래 취소 가능 -->
+                <form action="/items/posts/{{post.id}}/cancel" method="POST" style="display:inline;">
+                    <button type="submit" class="btn btn-cancel">거래 취소</button>
+                </form>
+            {{/post.isSoldOut}}
+
             {{^post.isSoldOut}}
+                <!-- 판매 중일 때 → 거래 완료 가능 -->
                 <form action="/items/posts/{{post.id}}/complete" method="POST" style="display:inline;">
-                    <button type="submit" class="btn-complete">거래 완료</button>
+                    <button type="submit" class="btn btn-complete">거래 완료</button>
                 </form>
             {{/post.isSoldOut}}
         </div>
+
+
     </div>
 </main>
 

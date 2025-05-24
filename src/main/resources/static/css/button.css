@@ -23,16 +23,57 @@
 }
 
 
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #f3f4f6;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+
 .btn-delete {
-    color: red;
-    margin-right: 10px;
+    color: #dc2626;
+}
+.btn-delete:hover {
+    background-color: #e5e7eb;
+    font-weight: 600;
 }
 
 .btn-edit {
-    color: blue;
-    margin-right: 10px;
+    color: #2563eb;
+}
+.btn-edit:hover {
+    background-color: #e5e7eb;
+    font-weight: 600;
 }
 
 .btn-complete {
-    color: green;
+    color: #059669;
+}
+.btn-complete:hover {
+    background-color: #e5e7eb;
+    font-weight: 600;
+}
+
+.btn-cancel {
+    color: #d97706;
+}
+
+.btn-cancel:hover {
+    background-color: #e5e7eb;
+    font-weight: 600;
+}
+
+/* 정렬은 그대로 유지 */
+.detail-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
 }
