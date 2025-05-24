@@ -27,9 +27,12 @@
             <li class="post-item">
                 <a href="/items/posts/{{id}}" class="post-link">
                     <h3>{{title}}</h3>
-                    <p>{{price}}원</p>
+                    <p class="post-price">{{price}}원</p>
+                    <p class="post-desc">{{content}}</p>
+                    <span class="post-status-badge {{#isSoldOut}}soldout{{/isSoldOut}}{{^isSoldOut}}onsale{{/isSoldOut}}">
+                        {{statusText}}
+                    </span>
                 </a>
-                <p class="post-desc">{{content}}</p>
             </li>
         {{/postList}}
     </ul>

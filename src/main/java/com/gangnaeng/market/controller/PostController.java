@@ -37,7 +37,7 @@ public class PostController {
     //전체 게시글 목록 조회
     @GetMapping
     public String list(Model model) {
-        Iterable<Post> posts = postRepository.findAll();
+        List<Post> posts = postRepository.findAllByOrderByIdDesc();
         List<PostResponseDto> postList = new ArrayList<>();
         for (Post post : posts) {
             postList.add(new PostResponseDto(post));

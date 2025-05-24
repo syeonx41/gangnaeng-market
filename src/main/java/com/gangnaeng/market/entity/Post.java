@@ -3,6 +3,8 @@ package com.gangnaeng.market.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Getter @Setter
 @NoArgsConstructor
@@ -20,5 +22,6 @@ public class Post {
 
     @Enumerated(EnumType.STRING)
     private PostStatus status;  //거래 상태
+
 }
 
