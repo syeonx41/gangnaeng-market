@@ -9,13 +9,14 @@
 }
 
 .btn-submit {
-    display: inline-block;
-    margin-top: 10px;
+    display: block;
+    margin: 20px auto 10px;
     padding: 10px 16px;
     background-color: #7EA65F;
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    border: 1px solid #c9dbc0;
 }
 
 .btn-submit:hover {
@@ -70,7 +71,6 @@
     font-weight: 600;
 }
 
-/* 정렬은 그대로 유지 */
 .detail-actions {
     display: flex;
     justify-content: center;

@@ -14,3 +14,9 @@ main {
     margin: 0 auto;
     padding: 40px 40px;
 }
+
+.form-title {
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}

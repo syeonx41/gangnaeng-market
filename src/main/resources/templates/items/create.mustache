@@ -1,7 +1,8 @@
 {{> layout/simple-header}}
 
-<main>
-    <h2>게시글 등록</h2>
+<main class="form-container">
+    <h2 class="form-title">게시글 등록</h2>
+
 
     <form action="/items/posts" method="POST">
         <div class="form-group">
@@ -12,7 +13,6 @@
         <div class="form-group">
             <label for="description">설명</label>
             <textarea id="content" name="content" rows="4" required></textarea>
-
         </div>
 
         <div class="form-group">
@@ -21,8 +21,9 @@
         </div>
 
         <button type="submit" class="btn-submit">등록하기</button>
-        <a href = "/items">홈으로</a>
+        <a href="/items" class="btn-back">홈으로</a>
     </form>
 </main>
+
 
 {{>layout/footer}}

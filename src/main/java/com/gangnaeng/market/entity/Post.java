@@ -21,7 +21,7 @@ public class Post {
     private Integer price;  //가격
 
     @Enumerated(EnumType.STRING)
-    private PostStatus status;  //거래 상태
+    private PostStatus status = PostStatus.ONSALE; //거래 상태
 
 }
 
